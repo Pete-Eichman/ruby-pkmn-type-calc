@@ -22,6 +22,7 @@ while true
     while true
       if types.include?(type2) && type2 == type1
         puts "Please enter a different subtype"
+        type2 = gets.chomp
       elsif !types.include?(type2)
         puts "Please enter a valid Pokemon type from this list:"
         puts types
@@ -30,9 +31,14 @@ while true
         puts "OK so your Pokemon is a #{type1} / #{type2} type."
         break
       end
+      break
+    end
     break
-    elsif response == "no"
-
-
-
+  elsif response == "no"
+    puts "OK so your Pokemon is a #{type1} monotype."
+    break
+  else
+    puts "Please enter a yes/no response."
+    response = gets.chomp
+  end
 end
